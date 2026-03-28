@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRT Station Memory Game</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout">
+        <div class="game-panel">
+            <h1>MRT Memory Challenge</h1>
+
+            <div class="setup-section">
+                <p>Select Lines:</p>
+                <div class="checkbox-group">
+                    <label data-line="nsl"><input type="checkbox" value="nsl" class="line-checkbox"> North South</label>
+                    <label data-line="ewl"><input type="checkbox" value="ewl" class="line-checkbox"> East West</label>
+                    <label data-line="ccl"><input type="checkbox" value="ccl" class="line-checkbox"> Circle</label>
+                    <label data-line="nel"><input type="checkbox" value="nel" class="line-checkbox"> North East</label>
+                    <label data-line="dtl"><input type="checkbox" value="dtl" class="line-checkbox"> Downtown</label>
+                    <label data-line="tel"><input type="checkbox" value="tel" class="line-checkbox"> Thomson-East Coast</label>
+                </div>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" id="strictOrder"> Sequential order (single line only)
+                    </label>
+                </div>
+                <button id="startBtn">Start Game</button>
+            </div>
+
+            <div id="gameArea" class="hidden">
+                <div class="stats">
+                    Score: <span id="score">0</span> / <span id="total">0</span>
+                </div>
+                <input type="text" id="stationInput" placeholder="Type a station name..." autocomplete="off">
+                <div class="controls">
+                    <button id="giveUpBtn">Give Up</button>
+                    <button id="resetBtn">Reset</button>
+                </div>
+                <div id="feedback"></div>
+                <div id="progressBoards"></div>
+            </div>
+        </div>
+
+        <div class="map-panel">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="data.js"></script>
+    <script src="map.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
